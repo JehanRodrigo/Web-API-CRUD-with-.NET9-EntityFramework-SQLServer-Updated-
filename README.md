@@ -69,6 +69,41 @@ public ActionResult<VideoGame> GetVideoGameById(int id) //this time we are getti
 
 ## Create a Video Game with POST
 * Post is the method that we use when we need to add sth.
+* update VideoGameController.cs
+```C#
+[HttpPost]
+
+public ActionResult<VideoGame> AddVideoGame(VideoGame newGame)
+{
+    if (newGame is null)
+        return BadRequest(); //returns status code 400 bad request
+
+    newGame.Id = videoGames.Max(g => g.Id) + 1; //finds the max Id and adds 1 to it
+    videoGames.Add(newGame); //adds the new game to the list
+    return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame); //returns status code 201 created
+}
+```
+
+## UPDATE a Video Game with PUT
+* PUT method is used to update whole object.
+* PATCH method is used to update only some properties of a object.
+* update VideoGameController.cs
+```C#
+[HttpPut("{id}")]
+
+public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
+{
+    var game = videoGames.FirstOrDefault(g => g.Id == id); //finds the game with the provided Id
+    if (game == null)
+        return NotFound(); //returns status code 404 not found
+
+    game.Title = updatedGame.Title; //updates the title
+    game.Platform = updatedGame.Platform; //updates the platform
+    game.Developer = updatedGame.Developer; //updates the developer
+    game.Publisher = updatedGame.Publisher; //updates the publisher
+    return Ok(game); //returns status code 200 OK
+}
+```
 
   ----------------------------------------------------------------
 Old Section:
