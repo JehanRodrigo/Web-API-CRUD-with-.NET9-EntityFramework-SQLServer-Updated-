@@ -118,7 +118,8 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
             return NoContent(); //returns status code 204 no content
         }
   ```
-
+  
+## Implementing the VideoGameDbContext
 
   ----------------------------------------------------------------
 Old Section:
