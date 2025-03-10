@@ -85,7 +85,8 @@ public ActionResult<VideoGame> AddVideoGame(VideoGame newGame)
 ```
 
 ## UPDATE a Video Game with PUT
-
+* PUT method is used to update complete object
+* 
 
   ----------------------------------------------------------------
 Old Section:
