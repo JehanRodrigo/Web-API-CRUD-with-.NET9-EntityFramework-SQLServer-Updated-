@@ -106,7 +106,18 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 ```
 
 ## DELETE a Video Game
-* 
+* update VideoGameController.cs
+  ```C#
+  [HttpDelete("{id}")]
+
+        public ActionResult DeleteVideoGame(int id) {
+            var game = videoGames.FirstOrDefault(g => g.Id == id); //finds the game with the provided Id
+            if (game == null)
+                return NotFound(); //returns status code 404 not found
+            videoGames.Remove(game); //removes the game from the list
+            return NoContent(); //returns status code 204 no content
+        }
+  ```
 
 
   ----------------------------------------------------------------
