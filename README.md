@@ -106,6 +106,8 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 ```
 
 ## DELETE a Video Game
+* 
+
 
   ----------------------------------------------------------------
 Old Section:
@@ -135,5 +137,29 @@ Old Section:
 ## Reference
 * [Youtube By Patrick God](https://www.youtube.com/watch?v=AKjG2tjI07U) (dotnet 9)
 * [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
-* Old
-* https://www.youtube.com/watch?v=6YIRKBsRWVI&t (dotnet 8))
+* Sample Games
+  ```JSON
+  [
+  {
+    "id": 1,
+    "title": "Spider-Man 2",
+    "platform": "PS5",
+    "developer": "Insomnic Games",
+    "publisher": "Sony Ineractive Entertainment"
+  },
+  {
+    "id": 2,
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "platform": "Nintendo Switch",
+    "developer": "Nintendo EPD",
+    "publisher": "Nintendo"
+  },
+  {
+    "id": 3,
+    "title": "Cyberpunk 2077: Updated",
+    "platform": "PC",
+    "developer": "CD Projekt Red",
+    "publisher": "CD Projekt"
+  }
+  ]
+  ```
