@@ -79,5 +79,15 @@ namespace VideoGameApi.Controllers
             game.Publisher = updatedGame.Publisher; //updates the publisher
             return Ok(game); //returns status code 200 OK
         }
+
+        [HttpDelete("{id}")]
+
+        public ActionResult DeleteVideoGame(int id) {
+            var game = videoGames.FirstOrDefault(g => g.Id == id); //finds the game with the provided Id
+            if (game == null)
+                return NotFound(); //returns status code 404 not found
+            videoGames.Remove(game); //removes the game from the list
+            return NoContent(); //returns status code 204 no content
+        }
     }
 }
