@@ -105,6 +105,8 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 }
 ```
 
+## DELETE a Video Game
+
   ----------------------------------------------------------------
 Old Section:
 [
