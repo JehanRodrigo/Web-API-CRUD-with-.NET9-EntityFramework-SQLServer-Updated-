@@ -135,8 +135,6 @@ Old Section:
     * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
 
 ## Reference
-* [Youtube By Patrick God](https://www.youtube.com/watch?v=AKjG2tjI07U) (dotnet 9)
-* [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
 * Sample Games
   ```JSON
   [
@@ -163,3 +161,6 @@ Old Section:
   }
   ]
   ```
+* [Youtube By Patrick God](https://www.youtube.com/watch?v=AKjG2tjI07U) (dotnet 9)
+* [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
+* [Article on .gitignore on W3Schools](https://www.w3schools.com/git/git_ignore.asp?remote=github)
