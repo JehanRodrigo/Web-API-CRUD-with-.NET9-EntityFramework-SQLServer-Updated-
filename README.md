@@ -84,6 +84,7 @@ public ActionResult<VideoGame> AddVideoGame(VideoGame newGame)
 }
 ```
 
+## UPDATE a Video Game with PUT
 
 
   ----------------------------------------------------------------
