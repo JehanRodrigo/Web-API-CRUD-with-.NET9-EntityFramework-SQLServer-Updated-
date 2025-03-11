@@ -1,6 +1,9 @@
-﻿namespace VideoGameApi.Data
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace VideoGameApi.Data
 {
-    public class VideoGameDbContext
+    public class VideoGameDbContext(DbContextOptions<VideoGameDbContext> options) : DbContext(options)
     {
     }
+    
 }
