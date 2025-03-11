@@ -120,6 +120,29 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   ```
   
 ## Implementing the VideoGameDbContext
+* Create Folder named "Data" inside the VideoGameApi Project.
+* Create VideoGameDbContext.cs inside it.
+* add:
+  ```C#
+  public class VideoGameDbContext(DbContextOptions<VideoGameDbContext> options) : DbContext(options)
+  ```
+* Time stamp: 39:27 Install package 'MicrosoftEntityFrameworkCore'
+  ```C#
+  public DbSet<VideoGame> VideoGames => Set<VideoGame>(); //creates a table called VideoGames and maps it to the VideoGame class
+  ```
+
+  ## Adding the ConnectionString in the appsettings.json
+  * code block for the appsettings.json
+  ```Json
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\SQLExpress;Database=VideoGameDb;Trusted_Connection=True;TrustServerCertificate=true;"
+  },
+  ```
+
+
+
+
+
 
   ----------------------------------------------------------------
 Old Section:
