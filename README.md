@@ -122,7 +122,13 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 ## Implementing the VideoGameDbContext
 * Create Folder named "Data" inside the VideoGameApi Project.
 * Create VideoGameDbContext.cs inside it.
-* 
+* add:
+  ```C#
+  public class VideoGameDbContext(DbContextOptions<VideoGameDbContext> options) : DbContext(options)
+  ```
+* Time stamp: 39:27 Install package 'MicrosoftEntityFrameworkCore'
+
+
 
 
 
