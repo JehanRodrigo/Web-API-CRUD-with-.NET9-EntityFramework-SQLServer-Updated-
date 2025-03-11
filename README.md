@@ -120,6 +120,13 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   ```
   
 ## Implementing the VideoGameDbContext
+* Create Folder named "Data" inside the VideoGameApi Project.
+* Create VideoGameDbContext.cs inside it.
+* 
+
+
+
+
 
   ----------------------------------------------------------------
 Old Section:
