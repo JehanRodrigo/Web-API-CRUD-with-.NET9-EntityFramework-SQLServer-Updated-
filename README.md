@@ -131,8 +131,13 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   public DbSet<VideoGame> VideoGames => Set<VideoGame>(); //creates a table called VideoGames and maps it to the VideoGame class
   ```
 
-  ## Add the ConnectionString in the appsettings.json
-  
+  ## Adding the ConnectionString in the appsettings.json
+  * code block for the appsettings.json
+  ```Json
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\SQLExpress;Database=VideoGameDb;Trusted_Connection=True;TrustServerCertificate=true;"
+  },
+  ```
 
 
 
