@@ -127,7 +127,12 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   public class VideoGameDbContext(DbContextOptions<VideoGameDbContext> options) : DbContext(options)
   ```
 * Time stamp: 39:27 Install package 'MicrosoftEntityFrameworkCore'
+  ```C#
+  public DbSet<VideoGame> VideoGames => Set<VideoGame>(); //creates a table called VideoGames and maps it to the VideoGame class
+  ```
 
+  ## Add the ConnectionString in the appsettings.json
+  
 
 
 
