@@ -148,6 +148,8 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   });
   ```
 
+  ## Installing the SQLServer Provider
+
 
 
 
