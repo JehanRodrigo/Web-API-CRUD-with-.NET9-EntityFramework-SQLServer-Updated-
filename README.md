@@ -139,7 +139,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   },
   ```
 
-  
+  ## Register the DbContext in the Program.cs
 
 
 
