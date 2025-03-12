@@ -141,7 +141,12 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 
   ## Register the DbContext in the Program.cs
   * Update program.cs
-  
+  ```C#
+  builder.Services.AddDbContext<VideoGameDbContext>(options =>
+  {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("VideoGameDb")); //connects to the database and uses the connection string from appsettings.json using the key "VideoGameDb"
+  });
+  ```
 
 
 
