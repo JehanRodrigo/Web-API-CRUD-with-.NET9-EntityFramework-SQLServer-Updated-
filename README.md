@@ -151,7 +151,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   ## Installing the SQLServer Provider
   * Go to nugget package manager by righthand clicking the project
   * Find "Microsoft.EntityFrameworkCore.SqIServer" - Microsoft SQL Server database provider for Entity Framework Core.
-  * Then Download and install it.
+  * Then Download and install it. (36 errors occur and does not install) 
 
 
 
