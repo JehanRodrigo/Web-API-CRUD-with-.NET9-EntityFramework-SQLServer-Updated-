@@ -1,9 +1,10 @@
 # ASP .Net Core Web API MySQL CRUD
 
 ## Prerequisites
+* add C# and Visual Studio .gitignore files for the repository **at the beginning.** (important)
 * Download and Install Dotnet 9 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 * Download and Install Visual Studio 2022 [here](https://visualstudio.microsoft.com/vs/)
-* add C# .gitignore for the repository.
+
   
 ## Creating the Project
 * Create a new project using "ASP.NET Core Web API" template on Visual Studio
