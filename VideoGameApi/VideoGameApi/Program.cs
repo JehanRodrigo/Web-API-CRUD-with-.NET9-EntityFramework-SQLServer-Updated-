@@ -10,10 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddDbContext<VideoGameDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("VideoGameDb")); //connects to the database and uses the connection string from appsettings.json using the key "VideoGameDb"
-});
+builder.Services.AddDbContext<VideoGameDbContext>(
+    options =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")) //connects to the database and uses the connection string from appsettings.json using the key "DefaultConnection"
+);
 
 var app = builder.Build();
 
