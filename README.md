@@ -230,4 +230,4 @@ Old Section:
 * [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
 * [Article on .gitignore on W3Schools](https://www.w3schools.com/git/git_ignore.asp?remote=github)
 * [Artical on adding images to readme.md](https://cloudinary.com/guides/web-performance/4-ways-to-add-images-to-github-readme-1-bonus-method#:~:text=Open%20the%20folder%20containing%20the,you%20want%20it%20to%20appear.&text=Click%20Preview%20to%20see%20how,README%20with%20the%20new%20image.)
-* [Adding Hyperlink to a topinc in same Readme.md file reference by chatgpt.](https://chatgpt.com/share/67d6c1fc-d27c-8003-978e-3cb30045c25a)
+* [Artical on Adding Hyperlinks in Readme.md file.]([https://chatgpt.com/share/67d6c1fc-d27c-8003-978e-3cb30045c25a](https://learn.microsoft.com/en-us/contribute/content/how-to-write-links?utm_source=chatgpt.com#bookmark-links))
