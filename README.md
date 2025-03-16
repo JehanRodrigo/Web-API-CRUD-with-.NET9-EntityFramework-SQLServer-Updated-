@@ -131,7 +131,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   public DbSet<VideoGame> VideoGames => Set<VideoGame>(); //creates a table called VideoGames and maps it to the VideoGame class
   ```
 
-  ## Adding the ConnectionString in the appsettings.json
+## Adding the ConnectionString in the appsettings.json
   * code block for the appsettings.json
   ```Json
   "ConnectionStrings": {
@@ -139,7 +139,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   },
   ```
 
-  ## Register the DbContext in the Program.cs
+## Register the DbContext in the Program.cs
   * Update program.cs
   ```C#
   builder.Services.AddDbContext<VideoGameDbContext>(options =>
@@ -148,7 +148,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   });
   ```
 
-  ## Installing the SQLServer Provider
+## Installing the SQLServer Provider
   * Go to nugget package manager by righthand clicking the project
   * Find "Microsoft.EntityFrameworkCore.SqlServer" - Microsoft SQL Server database provider for Entity Framework Core.
   * Then Download and install it. (Check below Error 3 in [Errors](#errors) Section, if needed) 
