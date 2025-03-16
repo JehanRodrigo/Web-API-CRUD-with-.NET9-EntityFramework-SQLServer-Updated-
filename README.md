@@ -151,8 +151,11 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 ## Installing the SQLServer Provider
   * Go to nugget package manager by righthand clicking the project
   * Find "Microsoft.EntityFrameworkCore.SqlServer" - Microsoft SQL Server database provider for Entity Framework Core.
-  * Then Download and install it. (Check below Error 3 in [Errors](#errors) Section, if needed) 
+  * Then Download and install it. (Check below Error 3 in [Errors](#errors) Section, if needed)
 
+## Installing SQL Server Express
+* Download And Install [SQLServer Management Studio 20.2.](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms)
+* Download and install [SQL Server 2022 Express.](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) 
 
 
 
@@ -230,4 +233,5 @@ Old Section:
 * [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
 * [Article on .gitignore on W3Schools](https://www.w3schools.com/git/git_ignore.asp?remote=github)
 * [Artical on adding images to readme.md](https://cloudinary.com/guides/web-performance/4-ways-to-add-images-to-github-readme-1-bonus-method#:~:text=Open%20the%20folder%20containing%20the,you%20want%20it%20to%20appear.&text=Click%20Preview%20to%20see%20how,README%20with%20the%20new%20image.)
-* [Artical on Adding Hyperlinks in Readme.md file.]([https://chatgpt.com/share/67d6c1fc-d27c-8003-978e-3cb30045c25a](https://learn.microsoft.com/en-us/contribute/content/how-to-write-links?utm_source=chatgpt.com#bookmark-links))
+* [Artical on Adding Hyperlinks in Readme.md file.](https://learn.microsoft.com/en-us/contribute/content/how-to-write-links?utm_source=chatgpt.com#bookmark-links)
+* [SQLServer Management Studio 20.2 Download](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms)
