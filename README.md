@@ -184,6 +184,9 @@ Old Section:
 2. open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.
     * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
 
+3. ![image](https://github.com/user-attachments/assets/3b8ce5b1-cc4f-4a5a-a21b-ae6d2a0b659d)
+
+
 ## Reference
 * Sample Games
   ```JSON
@@ -214,3 +217,4 @@ Old Section:
 * [Youtube By Patrick God](https://www.youtube.com/watch?v=AKjG2tjI07U) (dotnet 9)
 * [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
 * [Article on .gitignore on W3Schools](https://www.w3schools.com/git/git_ignore.asp?remote=github)
+* [Artical on adding images to readme.md](https://cloudinary.com/guides/web-performance/4-ways-to-add-images-to-github-readme-1-bonus-method#:~:text=Open%20the%20folder%20containing%20the,you%20want%20it%20to%20appear.&text=Click%20Preview%20to%20see%20how,README%20with%20the%20new%20image.)
