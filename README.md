@@ -184,7 +184,7 @@ Old Section:
 2. open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.
     * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
 
-3. ![image](https://github.com/user-attachments/assets/3b8ce5b1-cc4f-4a5a-a21b-ae6d2a0b659d)
+3. 
 
 
 ## Reference
