@@ -131,7 +131,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   public DbSet<VideoGame> VideoGames => Set<VideoGame>(); //creates a table called VideoGames and maps it to the VideoGame class
   ```
 
-  ## Adding the ConnectionString in the appsettings.json
+## Adding the ConnectionString in the appsettings.json
   * code block for the appsettings.json
   ```Json
   "ConnectionStrings": {
@@ -139,7 +139,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   },
   ```
 
-  ## Register the DbContext in the Program.cs
+## Register the DbContext in the Program.cs
   * Update program.cs
   ```C#
   builder.Services.AddDbContext<VideoGameDbContext>(options =>
@@ -148,11 +148,14 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   });
   ```
 
-  ## Installing the SQLServer Provider
+## Installing the SQLServer Provider
   * Go to nugget package manager by righthand clicking the project
-  * Find "Microsoft.EntityFrameworkCore.SqIServer" - Microsoft SQL Server database provider for Entity Framework Core.
-  * Then Download and install it. (36 errors occur and does not install) 
+  * Find "Microsoft.EntityFrameworkCore.SqlServer" - Microsoft SQL Server database provider for Entity Framework Core.
+  * Then Download and install it. (Check below Error 3 in [Errors](#errors) Section, if needed)
 
+## Installing SQL Server Express
+* Download And Install [SQLServer Management Studio 20.2.](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms)
+* Download and install [SQL Server 2022 Express.](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) 
 
 
 
@@ -168,21 +171,36 @@ Old Section:
 
 ]
 ------------------------------------------------------------------------------------------------
-## Errors
-1. Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages<br/>
+# Errors
+## 1. Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages<br/>
 (.NET 9)
    <br/>
-    * Make sure you have the official NuGet package reference in the NuGet.config. To do so follow these steps
+  * Make sure you have the official NuGet package reference in the NuGet.config. To do so follow these steps
   
       1. Open your Visual Studio
       2. Go to Tools -> Nuget Package Manager -> Package Manager Settings
       3. A setting menu will open, select Package Sources in the left-side navigation pane under Nuget Package Manager
       4. Look for a package with the name Nuget having this source address https://api.nuget.org/v3/index.json if not add it and click ok
       5. Clean your solution and build it again.
-    * This should solve your problem !!
+  * This should solve your problem !!
       
-2. open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.
-    * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
+## 2. Error with cache files. (Github Desktop)
+  * open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.
+  * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
+
+## 3. Error while installing "Microsoft.EntityFrameworkCore.SqlServer" (Error with package source)
+   ![image](https://github.com/user-attachments/assets/8e91697b-7a87-483a-aef3-78b5ef12fc6e)
+   ![image](https://github.com/user-attachments/assets/03dbf3bf-48fa-481f-a16f-b6c5b44a8100)
+
+  * First Check the "Package source settings" inside the "NuGet Package Manager" and it must only have this configuraton. ![image](https://github.com/user-attachments/assets/69b8c771-5989-4986-887a-4c6ca2a4897e)
+  * Secondly, Check the Dependencies form your Solution Explorer whether you have installed this Dependencies properly. if not install them using NuGet Package Manager.
+  * ![image](https://github.com/user-attachments/assets/05aae4dc-1ad4-4013-a88b-2e19c6409304)
+  * Now you are good to go !!!
+
+
+
+
+
 
 ## Reference
 * Sample Games
@@ -214,3 +232,6 @@ Old Section:
 * [Youtube By Patrick God](https://www.youtube.com/watch?v=AKjG2tjI07U) (dotnet 9)
 * [ASRNE'II' Core web API documentation with Swagger/OpenAPl](https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-8.0)
 * [Article on .gitignore on W3Schools](https://www.w3schools.com/git/git_ignore.asp?remote=github)
+* [Artical on adding images to readme.md](https://cloudinary.com/guides/web-performance/4-ways-to-add-images-to-github-readme-1-bonus-method#:~:text=Open%20the%20folder%20containing%20the,you%20want%20it%20to%20appear.&text=Click%20Preview%20to%20see%20how,README%20with%20the%20new%20image.)
+* [Artical on Adding Hyperlinks in Readme.md file.](https://learn.microsoft.com/en-us/contribute/content/how-to-write-links?utm_source=chatgpt.com#bookmark-links)
+* [SQLServer Management Studio 20.2 Download](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms)
