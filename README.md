@@ -159,7 +159,9 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 * Download and install [SQL Server 2022 Express.](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) 
 
 ## Code-First Migrations
-* 
+* Install NuGet Package "MicrosoftEntityFrameworkCore.Tools"
+
+
 
 
 
