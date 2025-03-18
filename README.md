@@ -158,6 +158,8 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 * Download And Install [SQLServer Management Studio 20.2.](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms)
 * Download and install [SQL Server 2022 Express.](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) 
 
+## Code-First Migrations
+* 
 
 
 
