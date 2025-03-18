@@ -162,6 +162,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 * Install NuGet Package "MicrosoftEntityFrameworkCore.Tools"
 * Go to Tools ->  NuGet Package Manager -> Package Manager Console
 * Select this project as default project
+* In CLItype ```Add-Migration Initial``` hit enter.
 
 
 
