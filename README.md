@@ -207,6 +207,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 
   ```
 * In CLI type ```Update-Database``` hit enter.
+  * This will run our migration file and creates a DB for us.
 
 
 
