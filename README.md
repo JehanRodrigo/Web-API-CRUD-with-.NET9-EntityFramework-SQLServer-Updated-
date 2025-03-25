@@ -237,7 +237,7 @@ Old Section:
   * This should solve your problem !!
       
 ## 2. Error with cache files. (Github Desktop)
-  * open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.
+  * ```open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.```
   * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
 
 ## 3. Error while installing "Microsoft.EntityFrameworkCore.SqlServer" (Error with package source)
@@ -251,12 +251,7 @@ Old Section:
 
 ## 4. Error while adding "Update-Databse" in Package Manager Console. 
   ![image](https://github.com/user-attachments/assets/582cd1d6-1d6f-4cec-ae44-6cf9ab9837df)
-  ```
-  ClientConnectionId:00000000-0000-0000-0000-000000000000
-  Error Number:-1983577849,State:0,Class:20
-  A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.
-  )
-  ```
+  ```ClientConnectionId:00000000-0000-0000-0000-000000000000 Error Number:-1983577849,State:0,Class:20 A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.)```
   * Make sure the connection string in your appsettings.json matches with your database's connection string.
     * you can find your database connection string when you first create it in the SQL Server Express 2022.
 
