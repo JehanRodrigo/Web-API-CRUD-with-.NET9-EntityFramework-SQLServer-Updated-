@@ -249,6 +249,9 @@ Old Section:
   * ![image](https://github.com/user-attachments/assets/05aae4dc-1ad4-4013-a88b-2e19c6409304)
   * Now you are good to go !!!
 
+## 4. Error while adding "Update-Databse" in Package Manager Console. 
+![image](https://github.com/user-attachments/assets/582cd1d6-1d6f-4cec-ae44-6cf9ab9837df)
+
 
 
 
