@@ -224,7 +224,7 @@ Old Section:
 ]
 ------------------------------------------------------------------------------------------------
 # Errors
-## 1. Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages<br/>
+## 1. ```Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages``` <br/>
 (.NET 9)
    <br/>
   * Make sure you have the official NuGet package reference in the NuGet.config. To do so follow these steps
@@ -237,7 +237,7 @@ Old Section:
   * This should solve your problem !!
       
 ## 2. Error with cache files. (Github Desktop)
-  * open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.
+  * ```open("VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx"): Permission denied fatal: Unable to process path VideoGameApi/.vs/VideoGameApi/FileContentIndex/e93899ed-d975-4484-a243-cf47bf0b989d.vsidx.```
   * this error you are sending cache files to the repository. To stop that create a proper C# gitignore.
 
 ## 3. Error while installing "Microsoft.EntityFrameworkCore.SqlServer" (Error with package source)
@@ -248,6 +248,18 @@ Old Section:
   * Secondly, Check the Dependencies form your Solution Explorer whether you have installed this Dependencies properly. if not install them using NuGet Package Manager.
   * ![image](https://github.com/user-attachments/assets/05aae4dc-1ad4-4013-a88b-2e19c6409304)
   * Now you are good to go !!!
+
+## 4. Error while adding "Update-Databse" in Package Manager Console. 
+  ![image](https://github.com/user-attachments/assets/582cd1d6-1d6f-4cec-ae44-6cf9ab9837df)
+  ```ClientConnectionId:00000000-0000-0000-0000-000000000000 Error Number:-1983577849,State:0,Class:20 A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.)```
+  * Make sure the connection string in your appsettings.json matches with your database's connection string.
+    * you can find your database connection string when you first create it in the SQL Server Express 2022.
+
+
+## Error 5
+  ![Screenshot 2025-03-25 201912](https://github.com/user-attachments/assets/b781eead-4fbb-4dce-8afe-a98f6cd32145)
+  ```ClientConnectionId:afb2e33e-4e08-47a9-9f4f-b257c40d27a5 Error Number:-2146893019,State:0,Class:20 A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)```
+  
 
 
 
