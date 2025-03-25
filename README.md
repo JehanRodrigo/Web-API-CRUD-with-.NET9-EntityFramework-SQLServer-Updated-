@@ -258,7 +258,7 @@ Old Section:
   )
   ```
   * Make sure the connection string in your appsettings.json matches with your database's connection string.
-    
+    * you can find your database connection string when you first create it in the SQL Server Express 2022.
 
 
 
