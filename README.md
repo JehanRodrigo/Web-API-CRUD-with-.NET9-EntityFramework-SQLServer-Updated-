@@ -250,7 +250,14 @@ Old Section:
   * Now you are good to go !!!
 
 ## 4. Error while adding "Update-Databse" in Package Manager Console. 
-![image](https://github.com/user-attachments/assets/582cd1d6-1d6f-4cec-ae44-6cf9ab9837df)
+  ![image](https://github.com/user-attachments/assets/582cd1d6-1d6f-4cec-ae44-6cf9ab9837df)
+  ```
+  ClientConnectionId:00000000-0000-0000-0000-000000000000
+  Error Number:-1983577849,State:0,Class:20
+  A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.
+  )
+  ```
+
 
 
 
