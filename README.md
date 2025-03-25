@@ -224,7 +224,7 @@ Old Section:
 ]
 ------------------------------------------------------------------------------------------------
 # Errors
-## 1. Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages<br/>
+## 1. ```Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages``` <br/>
 (.NET 9)
    <br/>
   * Make sure you have the official NuGet package reference in the NuGet.config. To do so follow these steps
