@@ -257,6 +257,8 @@ Old Section:
   A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 50 - Local Database Runtime error occurred. The specified LocalDB instance does not exist.
   )
   ```
+  * Make sure the connection string in your appsettings.json matches with your database's connection string.
+    
 
 
 
