@@ -259,6 +259,8 @@ Old Section:
 ## Error 5
   ![Screenshot 2025-03-25 201912](https://github.com/user-attachments/assets/b781eead-4fbb-4dce-8afe-a98f6cd32145)
   ```ClientConnectionId:afb2e33e-4e08-47a9-9f4f-b257c40d27a5 Error Number:-2146893019,State:0,Class:20 A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)```
+
+  * 
   
 
 
