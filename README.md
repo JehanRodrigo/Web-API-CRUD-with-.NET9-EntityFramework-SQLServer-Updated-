@@ -215,7 +215,11 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   * Select and expand your SQL Server.
   * Now under the Databases you will see our "VideoGameDb" database
     * In "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
-    * Righthand Click "dboVideoGames" and click "Edit to 100 rows". Then you well see the preview of the table on your righthand side panel
+    * Righthand Click "dboVideoGames" and click "Edit to 100 rows".
+      * Then you well see the preview of the table on your righthand side panel.
+      * Table will be probably blank.
+      * We can manually add some data here else we can seed some data.
+      
 
 
 
