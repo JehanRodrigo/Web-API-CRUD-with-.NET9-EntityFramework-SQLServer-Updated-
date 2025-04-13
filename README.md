@@ -134,6 +134,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 
 ## Adding the ConnectionString in the appsettings.json
   * code block for the appsettings.json
+  * **Important:** can change from person to person. Refer [Error 4](#4-error-while-adding-update-databse-in-package-manager-console) and [5.](#error-5)
   ```Json
   "ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\SQLExpress;Database=VideoGameDb;Trusted_Connection=True;TrustServerCertificate=true;"
@@ -209,20 +210,71 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 * In CLI type ```Update-Database``` hit enter.
   * This will run our migration file and creates a DB for us.
   * If errors occur, refer error 4 and error 5 [Errors](#errors)
+  
+* Open "Microsoft SQL Server Management Studio"
+  * Select and expand your SQL Server.
+  * Now under the Databases you will see our "VideoGameDb" database
+    * In "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
+    * Righthand Click "dboVideoGames" and click "Edit to 100 rows".
+      * Then you well see the preview of the table on your righthand side panel.
+      * Table will be probably blank.
+      * We can manually add some data here else we can seed some data.
+      
+
+## Seeding Data
+* update **VideoGameDbContext.cs**
+```C#
+using Microsoft.EntityFrameworkCore;
+
+namespace VideoGameApi.Data
+{
+    public class VideoGameDbContext(DbContextOptions<VideoGameDbContext> options) : DbContext(options)
+    {
+        public DbSet<VideoGame> VideoGames => Set<VideoGame>(); //creates a table called VideoGames and maps it to the VideoGame class
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) //this method is called when the model is being created
+        {
+           base.OnModelCreating(modelBuilder); //calls the base class method
+            modelBuilder.Entity<VideoGame>().HasData( //seeding the database with initial data
+                new VideoGame
+                {
+                    Id = 1,
+                    Title = "The Legend of Zelda: Breath of the Wild",
+                    Platform = "Nintendo Switch",
+                    Developer = "Nintendo EPD",
+                    Publisher = "Nintendo"
+                },
+                new VideoGame
+                {
+                    Id = 2,
+                    Title = "The Witcher 3: Wild Hunt",
+                    Platform = "PC, PS4, Xbox One, Nintendo Switch",
+                    Developer = "CD Projekt Red",
+                    Publisher = "CD Projekt"
+                },
+                new VideoGame
+                {
+                    Id = 3,
+                    Title = "Cyberpunk 2077: Updated",
+                    Platform = "PC",
+                    Developer = "Insomnic Games",
+                    Publisher = "Sony Ineractive Entertainment"
+                }
+            );
+        }
+    }
+    
+   
+}
+
+```
+* Now go to Package Manager Console.
+* Type ```Add-Migration <MigrationName>``` hit enter. Replace "<MigrationName>" with "Seeding" or anthing you like.
 
 
 
 
 
-
-  ----------------------------------------------------------------
-Old Section:
-[
-* Download MySQL Community Server 8 from [here](https://dev.mysql.com/downloads/mysql/)
-* Download MySQL Workbench 8 CE from [here](https://dev.mysql.com/downloads/workbench/)
-* create database mytestdb
-
-]
 ------------------------------------------------------------------------------------------------
 # Errors
 ## 1. ```Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages``` <br/>
