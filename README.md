@@ -209,9 +209,12 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 * In CLI type ```Update-Database``` hit enter.
   * This will run our migration file and creates a DB for us.
   * If errors occur, refer error 4 and error 5 [Errors](#errors)
+  
+* Open "Microsoft SQL Server Management Studio"
+  * Select and expand your SQL Server.
   * Now under the Databases you will see our "VideoGameDb" database
-    * in "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
-      
+    * In "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
+    * Righthand Click "dboVideoGames" and click "Edit to 100 rows". Then you well see the preview of the table on your righthand side panel
 
 
 
