@@ -215,7 +215,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   * Select and expand your SQL Server.
   * Now under the Databases you will see our "VideoGameDb" database
     * In "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
-    * Righthand Click "dboVideoGames" and click "Edit to 100 rows".
+    * Righthand Click "dboVideoGames" and click "Edit top 200 rows".
       * Then you well see the preview of the table on your righthand side panel.
       * Table will be probably blank.
       * We can manually add some data here else we can seed some data.
@@ -269,7 +269,79 @@ namespace VideoGameApi.Data
 
 ```
 * Now go to Package Manager Console.
-* Type ```Add-Migration <MigrationName>``` hit enter. Replace "<MigrationName>" with "Seeding" or anthing you like.
+* Type ```Add-Migration <MigrationName>``` hit enter. Replace "<MigrationName>" with "Seeding" or anthing you like. Also To undo this action, we can use ```Remove-Migration``` in PMC.
+  ### Migration File
+  ```C#
+  using Microsoft.EntityFrameworkCore.Migrations;
+
+  #nullable disable
+
+  #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+  namespace VideoGameApi.Migrations
+  {
+    /// <inheritdoc />
+    public partial class Seeding : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.InsertData(
+                table: "VideoGames",
+                columns: new[] { "Id", "Developer", "Platform", "Publisher", "Title" },
+                values: new object[,]
+                {
+                    { 1, "Nintendo EPD", "Nintendo Switch", "Nintendo", "The Legend of Zelda: Breath of the Wild" },
+                    { 2, "CD Projekt Red", "PC, PS4, Xbox One, Nintendo Switch", "CD Projekt", "The Witcher 3: Wild Hunt" },
+                    { 3, "Insomnic Games", "PC", "Sony Ineractive Entertainment", "Cyberpunk 2077: Updated" }
+                });
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DeleteData(
+                table: "VideoGames",
+                keyColumn: "Id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "VideoGames",
+                keyColumn: "Id",
+                keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "VideoGames",
+                keyColumn: "Id",
+                keyValue: 3);
+        }
+    }
+  }
+
+  ```
+* In PM Console type ```Update-Database``` hit enter.
+  * This will run our migration file and updates the DB for us.
+* Now, Open "Microsoft SQL Server Management Studio"
+* Go to dbo.VideoGames
+* You will see the data has inserted.
+* If no data in the table right hand click and click "execute SQL"
+* Still you can't see the values check the console for errors.
+
+
+## Implementing the CRUD operations with Entity Framework
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
