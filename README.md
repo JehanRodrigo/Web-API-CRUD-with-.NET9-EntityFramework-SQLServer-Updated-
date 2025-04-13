@@ -328,6 +328,21 @@ namespace VideoGameApi.Data
 * Still you can't see the values check the console for errors.
 
 
+## Implementing the CRUD operations with Entity Framework
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
