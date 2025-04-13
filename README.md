@@ -215,7 +215,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   * Select and expand your SQL Server.
   * Now under the Databases you will see our "VideoGameDb" database
     * In "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
-    * Righthand Click "dboVideoGames" and click "Edit to 100 rows".
+    * Righthand Click "dboVideoGames" and click "Edit top 200 rows".
       * Then you well see the preview of the table on your righthand side panel.
       * Table will be probably blank.
       * We can manually add some data here else we can seed some data.
@@ -269,17 +269,17 @@ namespace VideoGameApi.Data
 
 ```
 * Now go to Package Manager Console.
-* Type ```Add-Migration <MigrationName>``` hit enter. Replace "<MigrationName>" with "Seeding" or anthing you like.
+* Type ```Add-Migration <MigrationName>``` hit enter. Replace "<MigrationName>" with "Seeding" or anthing you like. Also To undo this action, we can use ```Remove-Migration``` in PMC.
   ### Migration File
   ```C#
   using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
+  #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+  #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace VideoGameApi.Migrations
-{
+  namespace VideoGameApi.Migrations
+  {
     /// <inheritdoc />
     public partial class Seeding : Migration
     {
@@ -316,9 +316,17 @@ namespace VideoGameApi.Migrations
                 keyValue: 3);
         }
     }
-}
+  }
 
   ```
+* In PM Console type ```Update-Database``` hit enter.
+  * This will run our migration file and updates the DB for us.
+* Now, Open "Microsoft SQL Server Management Studio"
+* Go to dbo.VideoGames
+* You will see the data has inserted.
+* If no data in the table right hand click and click "execute SQL"
+* Still you can't see the values check the console for errors.
+
 
 
 
