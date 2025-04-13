@@ -215,12 +215,6 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 
 
 
-  ----------------------------------------------------------------
-Old Section:
-[
-* Download MySQL Community Server 8 from [here](https://dev.mysql.com/downloads/mysql/)
-* Download MySQL Workbench 8 CE from [here](https://dev.mysql.com/downloads/workbench/)
-* create database mytestdb
 
 ]
 ------------------------------------------------------------------------------------------------
