@@ -134,7 +134,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 
 ## Adding the ConnectionString in the appsettings.json
   * code block for the appsettings.json
-  * **Important:** can change from person to person. Refer [Error 4](#4-error-while-adding-update-databse-in-package-manager-console)
+  * **Important:** can change from person to person. Refer [Error 4](#4-error-while-adding-update-databse-in-package-manager-console) and [5.](#error-5)
   ```Json
   "ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\SQLExpress;Database=VideoGameDb;Trusted_Connection=True;TrustServerCertificate=true;"
