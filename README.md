@@ -268,7 +268,8 @@ namespace VideoGameApi.Data
 }
 
 ```
-
+* Now go to Package Manager Console.
+* Type ```Add-Migration <MigrationName>``` hit enter. Replace "<MigrationName>" with "Seeding" or anthing you like.
 
 
 
