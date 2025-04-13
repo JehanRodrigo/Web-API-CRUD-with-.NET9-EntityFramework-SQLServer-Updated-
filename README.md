@@ -210,7 +210,8 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
   * This will run our migration file and creates a DB for us.
   * If errors occur, refer error 4 and error 5 [Errors](#errors)
   * Now under the Databases you will see our "VideoGameDb" database
-    * 
+    * in "VideoGameDb/Tables/dboVideoGames/columns" We can see our table columns.
+      
 
 
 
@@ -218,7 +219,7 @@ public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
 
 
 
-]
+
 ------------------------------------------------------------------------------------------------
 # Errors
 ## 1. ```Unable to find package Microsoft.AspNetCore.OpenApi. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages``` <br/>
