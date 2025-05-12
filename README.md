@@ -404,6 +404,44 @@ namespace VideoGameApi.Data
   * check the SQL management studio for the updated database.
   ![image](https://github.com/user-attachments/assets/6fb48693-24ed-4962-a6e7-34533762f64d)
 
+  * UpdateVideoGame Endpoint updated Code block
+  ```C#
+  [HttpPut("{id}")]
+
+  public async Task<ActionResult<VideoGame>> UpdateVideoGame(int id, VideoGame updatedGame)
+  {
+    var game = await _context.VideoGames.FindAsync(id); //finds the game with the provided Id
+    if (game == null)
+        return NotFound(); //returns status code 404 not found
+
+    game.Title = updatedGame.Title; //updates the title
+    game.Platform = updatedGame.Platform; //updates the platform
+    game.Developer = updatedGame.Developer; //updates the developer
+    game.Publisher = updatedGame.Publisher; //updates the publisher
+
+    await _context.SaveChangesAsync(); //saves the changes to the database  
+
+    return Ok(game); //returns status code 200 OK
+  }
+  ```
+
+  * DeleteVideoGame Endpoint updated Code block:
+  ```C#
+  [HttpDelete("{id}")]
+
+  public async Task<ActionResult> DeleteVideoGame(int id)
+  {
+    var game = await _context.VideoGames.FindAsync(id);
+    if (game == null)
+        return NotFound(); //returns status code 404 not found
+
+    _context.VideoGames.Remove(game); //removes the game from the list
+    await _context.SaveChangesAsync(); //saves the changes to the database
+
+    return NoContent(); //returns status code 204 no content
+  }
+  ```
+  
 
 
 
