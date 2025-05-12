@@ -331,7 +331,16 @@ namespace VideoGameApi.Data
 ## Implementing the CRUD operations with Entity Framework
 
 * Remove the static private list in the VideoGameController.cs
-* 
+* creating databas context:
+ * The old way without primary constructor
+  ```C#
+  private readonly VideoGameDbContext _context; //this is the database context
+
+  public VideoGameController(VideoGameDbContext context)
+  {
+    _context = context;
+  }
+  ```
 
 
 
