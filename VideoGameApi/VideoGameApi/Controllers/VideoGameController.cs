@@ -45,20 +45,23 @@ namespace VideoGameApi.Controllers
             return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame); //returns status code 201 created
         }
 
-        //[HttpPut("{id}")]
+        [HttpPut("{id}")]
 
-        //public ActionResult<VideoGame> UpdateVideoGame(int id, VideoGame updatedGame)
-        //{
-        //    var game = videoGames.FirstOrDefault(g => g.Id == id); //finds the game with the provided Id
-        //    if (game == null)
-        //        return NotFound(); //returns status code 404 not found
+        public async Task<ActionResult<VideoGame>> UpdateVideoGame(int id, VideoGame updatedGame)
+        {
+            var game = await _context.VideoGames.FindAsync(id); //finds the game with the provided Id
+            if (game == null)
+                return NotFound(); //returns status code 404 not found
 
-        //    game.Title = updatedGame.Title; //updates the title
-        //    game.Platform = updatedGame.Platform; //updates the platform
-        //    game.Developer = updatedGame.Developer; //updates the developer
-        //    game.Publisher = updatedGame.Publisher; //updates the publisher
-        //    return Ok(game); //returns status code 200 OK
-        //}
+            game.Title = updatedGame.Title; //updates the title
+            game.Platform = updatedGame.Platform; //updates the platform
+            game.Developer = updatedGame.Developer; //updates the developer
+            game.Publisher = updatedGame.Publisher; //updates the publisher
+
+            await _context.SaveChangesAsync(); //saves the changes to the database  
+
+            return Ok(game); //returns status code 200 OK
+        }
 
         //[HttpDelete("{id}")]
 
