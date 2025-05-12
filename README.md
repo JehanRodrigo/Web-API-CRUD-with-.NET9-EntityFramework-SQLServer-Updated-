@@ -424,6 +424,23 @@ namespace VideoGameApi.Data
     return Ok(game); //returns status code 200 OK
   }
   ```
+
+  * DeleteVideoGame Endpoint updated Code block:
+  ```C#
+  [HttpDelete("{id}")]
+
+  public async Task<ActionResult> DeleteVideoGame(int id)
+  {
+    var game = await _context.VideoGames.FindAsync(id);
+    if (game == null)
+        return NotFound(); //returns status code 404 not found
+
+    _context.VideoGames.Remove(game); //removes the game from the list
+    await _context.SaveChangesAsync(); //saves the changes to the database
+
+    return NoContent(); //returns status code 204 no content
+  }
+  ```
   
 
 
