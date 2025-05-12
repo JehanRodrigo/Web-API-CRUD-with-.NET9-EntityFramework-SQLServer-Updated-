@@ -367,6 +367,8 @@ namespace VideoGameApi.Data
     }
   }
   ```
+  * run the application and now you will see the only /api/VideoGame Endpoint
+  * test it and you'll see the Database records.
 
 
 
