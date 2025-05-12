@@ -332,14 +332,29 @@ namespace VideoGameApi.Data
 
 * Remove the static private list in the VideoGameController.cs
 * creating databas context:
- * The old way without primary constructor
+  * The old way without primary constructor
   ```C#
-  private readonly VideoGameDbContext _context; //this is the database context
 
-  public VideoGameController(VideoGameDbContext context)
+  public class VideoGameController : ControllerBase
   {
+   private readonly VideoGameDbContext _context; //this is the database context
+
+   public VideoGameController(VideoGameDbContext context)
+   {
     _context = context;
+   }
   }
+  ```
+  * The new way with the primary constructor
+  ```C#
+  public class VideoGameController(VideoGameDbContext context) : ControllerBase 
+  {
+     private readonly VideoGameDbContext _context = context; //this is the database context
+  }
+  ```
+  
+  ```C#
+
   ```
 
 
