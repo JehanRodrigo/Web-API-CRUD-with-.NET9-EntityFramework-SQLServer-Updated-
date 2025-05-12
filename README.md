@@ -331,7 +331,7 @@ namespace VideoGameApi.Data
 ## Implementing the CRUD operations with Entity Framework
 
 * Remove the static private list in the VideoGameController.cs
-* creating databas context:
+* creating database context:
   * The old way without primary constructor
   ```C#
 
@@ -369,8 +369,21 @@ namespace VideoGameApi.Data
   ```
   * run the application and now you will see the only /api/VideoGame Endpoint
   * test it and you'll see the Database records.
+* Update database context:
+  * get VideoGameById endpoint updated code block
+  ```C#
+  [HttpGet]
+  [Route("{id}")]
+  //or [Http("{id}")]
+  public async Task<ActionResult<VideoGame>> GetVideoGameById(int id) //this time we are getting single video game
+  {
+    var game = await _context.VideoGames.FindAsync(id); //finds the game with the provided Id
+    if (game == null) //if there's no matching Id
+        return NotFound(); // returns status code 404 not found
 
-
+    return Ok(game); // return the game with 200 OK
+  }
+  ```
 
 
 
