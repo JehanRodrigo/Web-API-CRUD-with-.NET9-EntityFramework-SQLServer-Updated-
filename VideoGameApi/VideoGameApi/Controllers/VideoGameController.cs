@@ -32,17 +32,18 @@ namespace VideoGameApi.Controllers
             return Ok(game); // return the game with 200 OK
         }
 
-        //[HttpPost]
+        [HttpPost]
 
-        //public ActionResult<VideoGame> AddVideoGame(VideoGame newGame)
-        //{
-        //    if (newGame is null)
-        //        return BadRequest(); //returns status code 400 bad request
+        public async Task<ActionResult<VideoGame>> AddVideoGame(VideoGame newGame)
+        {
+            if (newGame is null)
+                return BadRequest(); //returns status code 400 bad request
 
-        //    newGame.Id = videoGames.Max(g => g.Id) + 1; //finds the max Id and adds 1 to it
-        //    videoGames.Add(newGame); //adds the new game to the list
-        //    return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame); //returns status code 201 created
-        //}
+            _context.VideoGames.Add(newGame); //adds the new game to the database
+            await _context.SaveChangesAsync(); //saves the changes to the database
+
+            return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame); //returns status code 201 created
+        }
 
         //[HttpPut("{id}")]
 
