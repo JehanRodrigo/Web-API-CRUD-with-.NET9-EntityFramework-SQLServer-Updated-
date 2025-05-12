@@ -384,6 +384,27 @@ namespace VideoGameApi.Data
     return Ok(game); // return the game with 200 OK
   }
   ```
+  * AddVideoGame Endpoint updated Code block
+  ```C#
+  [HttpPost]
+
+  public async Task<ActionResult<VideoGame>> AddVideoGame(VideoGame newGame)
+  {
+    if (newGame is null)
+        return BadRequest(); //returns status code 400 bad request
+
+    _context.VideoGames.Add(newGame); //adds the new game to the database
+    await _context.SaveChangesAsync(); //saves the changes to the database
+
+    return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame); //returns status code 201 created
+  }
+  ```
+  * Output:
+  ![image](https://github.com/user-attachments/assets/89793adc-0414-48ea-9e8f-e4fa2e3a998b)
+  * check the SQL management studio for the updated database.
+  ![image](https://github.com/user-attachments/assets/6fb48693-24ed-4962-a6e7-34533762f64d)
+
+
 
 
 
@@ -472,6 +493,13 @@ namespace VideoGameApi.Data
     "platform": "PC",
     "developer": "CD Projekt Red",
     "publisher": "CD Projekt"
+  }
+  {
+  "id": 4,
+  "title": "Halo Infinite",
+  "platform": "Xbox Series x",
+  "developer": "343 Industries",
+  "publisher": "Xbox Game Studios"
   }
   ]
   ```
