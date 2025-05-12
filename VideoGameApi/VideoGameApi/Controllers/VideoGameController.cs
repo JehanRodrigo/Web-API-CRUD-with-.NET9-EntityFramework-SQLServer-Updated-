@@ -20,17 +20,17 @@ namespace VideoGameApi.Controllers
             return Ok(await _context.VideoGames.ToListAsync());
         }
 
-        //[HttpGet]
-        //[Route("{id}")]
-        ////or [Http("{id}")]
-        //public ActionResult<VideoGame> GetVideoGameById(int id) //this time we are getting single video game
-        //{
-        //    var game = videoGames.FirstOrDefault(g => g.Id == id); //*lambda expression* gets an object as g where Id is equal to the provided id 
-        //    if (game == null) //if there's no matching Id
-        //        return NotFound(); // returns status code 404 not found
+        [HttpGet]
+        [Route("{id}")]
+        //or [Http("{id}")]
+        public async Task<ActionResult<VideoGame>> GetVideoGameById(int id) //this time we are getting single video game
+        {
+            var game = await _context.VideoGames.FindAsync(id); //finds the game with the provided Id
+            if (game == null) //if there's no matching Id
+                return NotFound(); // returns status code 404 not found
 
-        //    return Ok(game); // return the game with 200 OK
-        //}
+            return Ok(game); // return the game with 200 OK
+        }
 
         //[HttpPost]
 
