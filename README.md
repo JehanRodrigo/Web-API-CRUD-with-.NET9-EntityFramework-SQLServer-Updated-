@@ -352,9 +352,20 @@ namespace VideoGameApi.Data
      private readonly VideoGameDbContext _context = context; //this is the database context
   }
   ```
-  
+  * Full code block
   ```C#
+  public class VideoGameController(VideoGameDbContext context) : ControllerBase 
+  {
+    private readonly VideoGameDbContext _context = context; //this is the database context
 
+   
+
+    [HttpGet]
+    public async Task<ActionResult<List<VideoGame>>> GetVideoGames() //gets list of video games
+    {
+        return Ok(await _context.VideoGames.ToListAsync());
+    }
+  }
   ```
 
 
