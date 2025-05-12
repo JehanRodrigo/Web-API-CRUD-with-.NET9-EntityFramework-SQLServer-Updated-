@@ -1,11 +1,11 @@
 # ASP .Net Core Web API MySQL CRUD
-
+ 
 ## Prerequisites
 * add **C#** and **Visual Studio** .gitignore files for the repository **at the beginning.** (important)
 * Download and Install Dotnet 9 SDK [here](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 * Download and Install Visual Studio 2022 [here](https://visualstudio.microsoft.com/vs/)
-
-  
+   
+        
 ## Creating the Project
 * Create a new project using "ASP.NET Core Web API" template on Visual Studio
   * Tick: Conﬁgure for HTTPS
@@ -330,7 +330,45 @@ namespace VideoGameApi.Data
 
 ## Implementing the CRUD operations with Entity Framework
 
+* Remove the static private list in the VideoGameController.cs
+* creating databas context:
+  * The old way without primary constructor
+  ```C#
 
+  public class VideoGameController : ControllerBase
+  {
+   private readonly VideoGameDbContext _context; //this is the database context
+
+   public VideoGameController(VideoGameDbContext context)
+   {
+    _context = context;
+   }
+  }
+  ```
+  * The new way with the primary constructor
+  ```C#
+  public class VideoGameController(VideoGameDbContext context) : ControllerBase 
+  {
+     private readonly VideoGameDbContext _context = context; //this is the database context
+  }
+  ```
+  * Full code block
+  ```C#
+  public class VideoGameController(VideoGameDbContext context) : ControllerBase 
+  {
+    private readonly VideoGameDbContext _context = context; //this is the database context
+
+   
+
+    [HttpGet]
+    public async Task<ActionResult<List<VideoGame>>> GetVideoGames() //gets list of video games
+    {
+        return Ok(await _context.VideoGames.ToListAsync());
+    }
+  }
+  ```
+  * run the application and now you will see the only /api/VideoGame Endpoint
+  * test it and you'll see the Database records.
 
 
 
