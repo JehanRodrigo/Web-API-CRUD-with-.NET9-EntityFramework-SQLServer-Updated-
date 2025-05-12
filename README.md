@@ -330,7 +330,8 @@ namespace VideoGameApi.Data
 
 ## Implementing the CRUD operations with Entity Framework
 
-
+* Remove the static private list in the VideoGameController.cs
+* 
 
 
 
