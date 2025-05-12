@@ -331,7 +331,7 @@ namespace VideoGameApi.Data
 ## Implementing the CRUD operations with Entity Framework
 
 * Remove the static private list in the VideoGameController.cs
-* creating databas context:
+* creating database context:
   * The old way without primary constructor
   ```C#
 
@@ -369,6 +369,40 @@ namespace VideoGameApi.Data
   ```
   * run the application and now you will see the only /api/VideoGame Endpoint
   * test it and you'll see the Database records.
+* Update database context:
+  * get VideoGameById endpoint updated code block
+  ```C#
+  [HttpGet]
+  [Route("{id}")]
+  //or [Http("{id}")]
+  public async Task<ActionResult<VideoGame>> GetVideoGameById(int id) //this time we are getting single video game
+  {
+    var game = await _context.VideoGames.FindAsync(id); //finds the game with the provided Id
+    if (game == null) //if there's no matching Id
+        return NotFound(); // returns status code 404 not found
+
+    return Ok(game); // return the game with 200 OK
+  }
+  ```
+  * AddVideoGame Endpoint updated Code block
+  ```C#
+  [HttpPost]
+
+  public async Task<ActionResult<VideoGame>> AddVideoGame(VideoGame newGame)
+  {
+    if (newGame is null)
+        return BadRequest(); //returns status code 400 bad request
+
+    _context.VideoGames.Add(newGame); //adds the new game to the database
+    await _context.SaveChangesAsync(); //saves the changes to the database
+
+    return CreatedAtAction(nameof(GetVideoGameById), new { id = newGame.Id }, newGame); //returns status code 201 created
+  }
+  ```
+  * Output:
+  ![image](https://github.com/user-attachments/assets/89793adc-0414-48ea-9e8f-e4fa2e3a998b)
+  * check the SQL management studio for the updated database.
+  ![image](https://github.com/user-attachments/assets/6fb48693-24ed-4962-a6e7-34533762f64d)
 
 
 
@@ -459,6 +493,13 @@ namespace VideoGameApi.Data
     "platform": "PC",
     "developer": "CD Projekt Red",
     "publisher": "CD Projekt"
+  }
+  {
+  "id": 4,
+  "title": "Halo Infinite",
+  "platform": "Xbox Series x",
+  "developer": "343 Industries",
+  "publisher": "Xbox Game Studios"
   }
   ]
   ```
